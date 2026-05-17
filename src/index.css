@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Playfair Display", serif;
+
+  --color-luxury-bg: #0a0a0a;
+  --color-luxury-surface: #121212;
+  --color-luxury-ink: #f5f2ed;
+  --color-luxury-gold: #c5a059;
+}
+
+@layer base {
+  body {
+    @apply bg-luxury-bg text-luxury-ink font-sans antialiased selection:bg-luxury-gold selection:text-black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.luxury-card {
+  @apply bg-white/5 border border-white/10 hover:border-luxury-gold/50 hover:bg-white/[0.07] transition-all duration-500;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  @apply rotate-180 uppercase tracking-[0.2em] text-[10px] font-medium;
+}
+
+.glow-hover {
+  @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,160,89,0.2)];
+}
+
